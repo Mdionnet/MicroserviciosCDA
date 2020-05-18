@@ -1,5 +1,6 @@
 package com.cda.microservicios.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,18 +13,24 @@ public class Pais {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long idPais;
+	@Column(name="ID_PAIS")
+	private long id;
 
+	@Column(name="NOMBRE_PAIS")
 	private String nombre;
+	
+	@Column(name="COORDENADAS_PAIS")
 	private String coordenadas;
+	
+	@Column(name="CLIMA_PAIS")
 	private String clima;
 
 	public long getIdPais() {
-		return idPais;
+		return id;
 	}
 
 	public void setIdPais(long idPais) {
-		this.idPais = idPais;
+		this.id = idPais;
 	}
 
 	public String getNombre() {

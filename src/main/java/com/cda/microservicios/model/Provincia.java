@@ -1,5 +1,6 @@
 package com.cda.microservicios.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,10 +15,13 @@ public class Provincia {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long idProvincia;
+	@Column(name="ID_PROVINCIA")
+	private long id;
 	
+	@Column(name="NOMBRE_PROVINCIA")
 	private String nombre;
 	
+	@Column(name="UBICACION_GEOGRAFICA")
 	private String ubicacionGeografica;
 	
 	@ManyToOne
@@ -25,11 +29,11 @@ public class Provincia {
 	private Pais pais;
 
 	public long getIdProvincia() {
-		return idProvincia;
+		return id;
 	}
 
 	public void setIdProvincia(long idProvincia) {
-		this.idProvincia = idProvincia;
+		this.id = idProvincia;
 	}
 
 	public String getNombre() {

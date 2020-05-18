@@ -1,5 +1,6 @@
 package com.cda.microservicios.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,11 +14,19 @@ import javax.persistence.Table;
 public class Domicilio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long idDomicilio;
-
+	@Column(name="ID_DOMICILIO")
+	private long id;
+	
+	@Column(name="NUMERACION")
 	private int numeracion;
+	
+	@Column(name="CALLE")
 	private String calle;
+	
+	@Column(name="ENTRE_CALLE_UNO")
 	private String entreCalleUno;
+	
+	@Column(name="ENTRE_CALLE_DOS")
 	private String entreCalleDos;
 
 	@ManyToOne
@@ -25,11 +34,11 @@ public class Domicilio {
 	private Barrio barrio;
 	
 	public long getIdDomicilio() {
-		return idDomicilio;
+		return id;
 	}
 
 	public void setIdDomicilio(long idDomicilio) {
-		this.idDomicilio = idDomicilio;
+		this.id = idDomicilio;
 	}
 
 	public int getNumeracion() {

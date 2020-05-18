@@ -1,5 +1,6 @@
 package com.cda.microservicios.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,20 +14,24 @@ import javax.persistence.Table;
 public class Localidad {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long idLocalidad;
+	@Column(name="ID_LOCALIDAD")
+	private long id;
 
+	@Column(name="NOMBRE_LOCALIDAD")
 	private String nombreLocalidad;
+	
+	@Column(name="CANTIDAD_BARRIOS")
 	private int cantidadBarrios;
 	
 	@ManyToOne
 	@JoinColumn(name = "partido_id")
 	private Partido partido;
 	public long getIdLocalidad() {
-		return idLocalidad;
+		return id;
 	}
 
 	public void setIdLocalidad(long idLocalidad) {
-		this.idLocalidad = idLocalidad;
+		this.id = idLocalidad;
 	}
 
 	public String getNombreLocalidad() {
