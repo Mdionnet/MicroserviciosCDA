@@ -27,7 +27,7 @@ public class Provincia {
 	@ManyToOne
 	@JoinColumn(name = "pais_id")
 	private Pais pais;
-//a
+
 	public long getIdProvincia() {
 		return id;
 	}
